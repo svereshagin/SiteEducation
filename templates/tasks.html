@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Задания{% endblock %}
+
+{% block content %}
+<h1>Задания</h1>
+<form method="post">
+    {% csrf_token %}
+    <textarea name="code" rows="10" cols="50" placeholder="Введите код..."></textarea><br>
+    <input type="submit" value="Запустить">
+</form>
+
+{% if result %}
+    <h2>Результат:</h2>
+    <pre>{{ result }}</pre>
+{% endif %}
+{% endblock %}
